@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace Homework1
 {
-    class Excercise1
+    class Excercises
     { 
         static void Main(string[] args)
         {
+            // Exercise 0
+            /*
             string result = "";
             for (int i = 0; i < 9; i++)
             {
@@ -21,6 +23,15 @@ namespace Homework1
             }
             Console.Write(result);
             Console.ReadLine();
+            */
+
+            //Exercise 1
+
+            //Exercise 2
+            //i = 0
+
         }
     }
+
+    
 }
