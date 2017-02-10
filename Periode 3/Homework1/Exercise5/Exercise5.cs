@@ -37,7 +37,6 @@ namespace Exercise5
             Console.WriteLine(interval.Sum());
 
             Console.ReadKey();
-
         }
     }
 }
