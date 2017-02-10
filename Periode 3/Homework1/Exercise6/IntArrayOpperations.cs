@@ -18,12 +18,22 @@ namespace Exercise6
         public int Sum()
         {
             int output = 0;
+            for (int i = 0; i < List.Count(); i++)
+            {
+                output = output + List[i];
+            }
+            //return List.Sum(); // <-- veel makkelijker
             return output;
         }
 
         public string Product()
         {
-            string output = "product";
+            string output = "";
+            for (int i = 0; i < List.Count(); i++)
+            {
+                output = output + List[i];
+            }
+            
             return output;
         }
     }

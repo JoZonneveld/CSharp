@@ -10,7 +10,7 @@ namespace Exercise6
     {
         static void Main(string[] args)
         {
-            int[] List = new int[5] { 1, 2, 3, 4, 5 };
+            int[] List = new int[6] { 1, 2, 3, 4, 5,6 };
 
             var Lijst = new IntArrayOpperations(List);
 
