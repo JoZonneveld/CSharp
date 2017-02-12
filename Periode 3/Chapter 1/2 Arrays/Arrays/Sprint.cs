@@ -4,12 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Homework_2
+namespace Arrays
 {
-    class Program
+    class Sprint
     {
-        static void Main(string[] args)
+        Array UserStory;
+        
+        public Sprint(Array userstory)
         {
+            this.UserStory = userstory;
         }
     }
 }
