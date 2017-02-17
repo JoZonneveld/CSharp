@@ -21,14 +21,15 @@ namespace Arrays
                 new object[] {40, "US3"},
                 new object[] {40, "US4"}
             };
-            object[] Userstorylist = {};
+            string[] Userstorylist = {};
             for (int i = 0; i < userstory.Count(); i++)
             {
                 Console.WriteLine(userstory[i][0]);
                 //Userstorylist[i] = new UserStory(userstory[i][0], userstory[i][1]);
+                Userstorylist[i] = "tet";
             }
 
-            //Console.WriteLine(Userstorylist[0]);
+            Console.WriteLine(Userstorylist[0]);
             /*
             string[][] list =
             {
