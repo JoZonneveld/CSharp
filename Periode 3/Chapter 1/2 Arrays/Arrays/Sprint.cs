@@ -8,9 +8,9 @@ namespace Arrays
 {
     class Sprint
     {
-        private string[][] UserStory;
-        
-        public Sprint(string[][] userstory)
+        private List<UserStory> UserStory;
+
+        public Sprint(List<UserStory> userstory)
         {
             this.UserStory = userstory;
         }
@@ -25,28 +25,17 @@ namespace Arrays
             Console.WriteLine("Voer beschrijving in: ");
             string description = Console.ReadLine();
             Console.WriteLine("Voer het aantal uren in: ");
-            string hours = Console.ReadLine();
+            int hours = Convert.ToInt32(Console.ReadLine());
 
-            string[][] NewList = { new string[]{hours, description} };
-            this.UserStory = (string[][]) UserStory.Concat(NewList);
-
+            UserStory.Add(new UserStory(hours, description));
         }
 
         public int totalHours()
         {
-            int count = this.UserStory.Count();
             int output = 0;
-            for (int i = 0; i < count; i++)
+            for(int i = 0; i < UserStory.Count(); i++)
             {
-                try
-                {
-                    int j = Int32.Parse(UserStory[i][0]);
-                    output += j;
-                }
-                catch (FormatException e)
-                {
-                    Console.WriteLine(e.Message);
-                }
+                output += UserStory[i].RetHours();
             }
             return output;
         }

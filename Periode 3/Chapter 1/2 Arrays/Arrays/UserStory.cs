@@ -9,16 +9,16 @@ namespace Arrays
 {
     class UserStory
     {
-        private object Hours;
-        private object Description;
+        private int Hours;
+        private string Description;
 
-        public UserStory(object hours, object description)
+        public UserStory(int hours, string description)
         {
             this.Hours = hours;
             this.Description = description;
         }
 
-        public object RetHours()
+        public int RetHours()
         {
             return Hours;
         }
