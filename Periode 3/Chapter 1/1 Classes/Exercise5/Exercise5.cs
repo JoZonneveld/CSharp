@@ -16,6 +16,10 @@ namespace Exercise5
 
             Console.WriteLine(interval.Product());
 
+            Console.WriteLine(interval.Begin);
+
+            Console.WriteLine(interval.End);
+
             Console.ReadKey();
         }
     }

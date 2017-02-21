@@ -8,8 +8,8 @@ namespace Exercise5
 {
     class Interval
     {
-        private int Begin;
-        private int End;
+        public int Begin;
+        public int End;
 
         public Interval(int Begin, int End)
         {

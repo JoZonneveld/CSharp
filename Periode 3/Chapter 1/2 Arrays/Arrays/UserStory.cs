@@ -9,23 +9,13 @@ namespace Arrays
 {
     class UserStory
     {
-        private int Hours;
-        private string Description;
+        public int Hours;
+        public string Description;
 
         public UserStory(int hours, string description)
         {
             this.Hours = hours;
             this.Description = description;
-        }
-
-        public int RetHours()
-        {
-            return Hours;
-        }
-
-        public string RetDescription()
-        {
-            return this.Description.ToString();
         }
     }
 }

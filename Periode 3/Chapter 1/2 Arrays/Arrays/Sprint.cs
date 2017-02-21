@@ -8,7 +8,7 @@ namespace Arrays
 {
     class Sprint
     {
-        private List<UserStory> UserStory;
+        public List<UserStory> UserStory;
 
         public Sprint(List<UserStory> userstory)
         {
@@ -35,7 +35,7 @@ namespace Arrays
             int output = 0;
             for(int i = 0; i < UserStory.Count(); i++)
             {
-                output += UserStory[i].RetHours();
+                output += UserStory[i].Hours;
             }
             return output;
         }
