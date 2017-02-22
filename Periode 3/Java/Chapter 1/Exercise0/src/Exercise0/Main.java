@@ -1,12 +1,21 @@
 package Exercise0;
+
+import com.sun.org.apache.xpath.internal.operations.Variable;
+
 public class Main
 {
     public static void main(String[] args)
     {
-        int test = 0;
-        String test2 = "Hello World";
+        String result = "";
+        for(int i = 0; i < 9; i++)
+        {
+            for(int j = 0; j < i; j++)
+            {
+                result += "*";
+            }
+            result += "\n";
+        }
 
-        System.out.println(test2);
-        System.out.println(test);
+        System.out.println(result);
     }
 }
