@@ -10,7 +10,15 @@ namespace LinkedList
     {
         static void Main(string[] args)
         {
+            Node test = new Node(1, new Node(2, new Node(3, new Empty())));
 
+            Console.WriteLine(test.Value);
+            /*while (test.IsEmpty == false)
+            {
+                Console.WriteLine(test.Value);
+            }*/
+
+            Console.ReadKey();
         }
     }
 }
