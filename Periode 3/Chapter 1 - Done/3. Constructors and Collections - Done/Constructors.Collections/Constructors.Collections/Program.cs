@@ -18,13 +18,19 @@ namespace Constructors.Collections
                 new UserStory(40, "US4"),
             };
 
-            var sprint = new Sprint(userstory);
+            DateTime date = new DateTime(2017, 02, 25);
 
-            Console.WriteLine(sprint.totalHours());
+            var sprint = new Sprint(userstory, "1 Week", date);
+            Console.WriteLine(sprint.HoursDone());
+            Console.WriteLine(sprint.HoursRemain());
+            Console.WriteLine(sprint.SprintDone());
+            Console.WriteLine(sprint.hack());
+            Console.WriteLine(sprint.SprintDone());
+            //Console.WriteLine(sprint.totalHours());
 
-            sprint.NewUserstory();
+            //sprint.NewUserstory();
 
-            Console.WriteLine(sprint.totalHours());
+            //Console.WriteLine(sprint.totalHours());
 
             Console.ReadKey();
         }
