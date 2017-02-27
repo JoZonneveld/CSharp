@@ -16,6 +16,11 @@ namespace Exercise0
             Console.WriteLine(this.Talk);
         }
 
+        public void test()
+        {
+            Console.WriteLine("test");
+        }
+
     }
 
     public class Dog : Animal

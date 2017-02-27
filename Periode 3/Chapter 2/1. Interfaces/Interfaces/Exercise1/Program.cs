@@ -12,6 +12,7 @@ namespace Exercise1
         {
 
             Person test = new Customer();
+            
 
             Console.WriteLine(test.Name);
             Console.WriteLine(test.Surname);
@@ -20,6 +21,8 @@ namespace Exercise1
             test.Birthday();
             test.Eat();
             test.Sleep();
+
+            //test.
             
             Console.WriteLine(test.Age);
 
