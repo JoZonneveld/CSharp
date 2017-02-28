@@ -2,33 +2,27 @@
 
 namespace Exercise1
 {
-    public class Customer : Person
+
+    public class PersonClass : Person
     {
-        private string name;
+        public string name;
         public string Name
         {
             get { return name; }
         }
 
-        private string surname;
+        public string surname;
         public string Surname
         {
             get { return surname; }
         }
 
-        private int age;
+        public int age;
         public int Age
         {
             get { return age; }
         }
-
-        public Customer()
-        {
-            this.name = "Joost";
-            this.surname = "Zonneveld";
-            this.age = 21;
-        }
-
+        
         //Person Methods
         void Person.Birthday()
         {
@@ -43,6 +37,16 @@ namespace Exercise1
         void Person.Sleep()
         {
             Console.WriteLine("SSSSSLLLLLEEEEEPPPPPIIIIINNNNNGGGGG");
+        }
+    }
+
+    public class Customer : PersonClass
+    {
+        public Customer()
+        {
+            this.name = "JoostCustomer";
+            this.surname = "ZonneveldCustomer";
+            this.age = 20;
         }
 
         //Customer Methods
