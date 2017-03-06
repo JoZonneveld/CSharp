@@ -10,15 +10,11 @@ namespace Exercise5
     {
         static void Main(string[] args)
         {
-            var interval = new Interval(1,10);
+            Interval interval = new Interval(1,10);
 
             Console.WriteLine(interval.Sum());
 
             Console.WriteLine(interval.Product());
-
-            Console.WriteLine(interval.Begin);
-
-            Console.WriteLine(interval.End);
 
             Console.ReadKey();
         }

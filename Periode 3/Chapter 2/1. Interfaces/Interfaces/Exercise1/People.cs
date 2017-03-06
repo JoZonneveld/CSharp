@@ -2,7 +2,7 @@
 
 namespace Exercise1
 {
-
+    //Superclass
     public class PersonClass : Person
     {
         public string name;
@@ -40,8 +40,10 @@ namespace Exercise1
         }
     }
 
+    // Customer class
     public class Customer : PersonClass
     {
+        // Constructor
         public Customer()
         {
             this.name = "JoostCustomer";
@@ -63,6 +65,62 @@ namespace Exercise1
         public void AskStupidQuestions()
         {
             Console.WriteLine("Ask Employee");
+        }
+    }
+
+    //student Class
+    public class Student : PersonClass
+    {
+        //Constructor
+        public Student()
+        {
+            this.name = "JoostStudent";
+            this.surname = "ZonneveldStudent";
+            this.age = 20;
+        }
+
+        //Student methods
+
+        public void Study()
+        {
+            Console.WriteLine("Studying");
+        }
+
+        public void Party()
+        {
+            Console.WriteLine("Partyyyy");
+        }
+
+        public void Struggle()
+        {
+            Console.WriteLine("Why isn't my dev project working!?!?!?!?!?");
+        }
+    }
+
+    public class Teacher : PersonClass
+    {
+        //Constructor
+        public Teacher()
+        {
+            this.name = "JoostTeacher";
+            this.surname = "ZonneveldTeacher";
+            this.age = 20;
+        }
+
+        //Teacher methods
+        public void Teach()
+        {
+            Console.WriteLine("Teach stuff");
+        }
+
+        public void GiveHomework()
+        {
+            Console.WriteLine("Make this before friday");
+        }
+
+        public void Nag()
+        {
+            Console.WriteLine("Yeah its right, but..... ");
         }
     }
 }

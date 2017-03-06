@@ -11,20 +11,18 @@ namespace Exercise1
         static void Main(string[] args)
         {
 
-            Customer test = new Customer();
-            
+            Person customer = new Customer();
 
-            Console.WriteLine(test.Name);
-            Console.WriteLine(test.Surname);
-            Console.WriteLine(test.Age);
+            Person student = new Student();
 
-            ((Person) test).Birthday();
-            ((Person) test).Eat();
-            ((Person) test).Sleep();
+            Person teacher = new Teacher();
 
-            test.Buy();
-            
-            Console.WriteLine(test.Age);
+            student.Eat();
+            customer.Sleep();
+
+            ((Customer)customer).Buy();
+            ((Student)student).Struggle();
+            ((Teacher)teacher).Nag();
 
             Console.ReadKey();
         }

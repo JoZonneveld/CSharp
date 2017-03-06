@@ -22,7 +22,7 @@ namespace Exercise5
             int output = 0;
             for (int i = this.Begin; i <= this.End; i++)
             {
-                output = output + i;
+                output = output + i; 
             }
             return output;
         }
