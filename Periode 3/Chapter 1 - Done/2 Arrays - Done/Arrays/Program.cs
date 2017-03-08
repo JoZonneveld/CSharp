@@ -18,7 +18,7 @@ namespace Arrays
                 new UserStory(40, "US4"),
             };
                        
-            var sprint = new Sprint(userstory);
+            Sprint sprint = new Sprint(userstory);
            
             Console.WriteLine(sprint.totalHours());
 
@@ -27,6 +27,7 @@ namespace Arrays
             Console.WriteLine(sprint.totalHours());
 
             Console.ReadKey();
+            
         }
     }
 }

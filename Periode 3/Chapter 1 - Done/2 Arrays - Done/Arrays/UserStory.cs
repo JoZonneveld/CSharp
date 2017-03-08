@@ -17,5 +17,10 @@ namespace Arrays
             this.Hours = hours;
             this.Description = description;
         }
+
+        public string ToString()
+        {
+            return "Uren: " + Hours + " Description: " + Description;
+        }
     }
 }
