@@ -4,10 +4,14 @@
     {
         void Move();
         void LoadFuel();
+        double Tank { get; set; }
+        double TankCapacity { get; set; }
+        int FuelEconomy { get; set; }
     }
 
     public interface Fuel
     {
-        float tank { get; set; }
+        double Price { get; set; }
+        string FuelKind { get; }
     }
 }

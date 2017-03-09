@@ -8,7 +8,7 @@ namespace Constructors.Collections
     {
         public List<UserStory> UserStory;
         public string Duration;
-        private DateTime StartDate;
+        public DateTime StartDate;
 
         public Sprint(List<UserStory> userstory, string duration, DateTime date)
         {

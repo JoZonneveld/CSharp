@@ -21,13 +21,14 @@ namespace Constructors.Collections
             DateTime date = new DateTime(2017, 02, 25);
 
             var sprint = new Sprint(userstory, "1 Week", date);
-            Console.WriteLine(sprint.HoursDone());
-            Console.WriteLine(sprint.HoursRemain());
-            Console.WriteLine(sprint.SprintDone());
-            Console.WriteLine(sprint.hack());
-            Console.WriteLine(sprint.SprintDone());
+            //Console.WriteLine(sprint.HoursDone());
+            //Console.WriteLine(sprint.HoursRemain());
+            //Console.WriteLine(sprint.SprintDone());
+            //Console.WriteLine(sprint.hack());
+            //Console.WriteLine(sprint.SprintDone());
             //Console.WriteLine(sprint.totalHours());
-
+            Console.WriteLine(sprint.StartDate);
+            Console.WriteLine(sprint.retStartdate());
             //sprint.NewUserstory();
 
             //Console.WriteLine(sprint.totalHours());
