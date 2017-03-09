@@ -5,4 +5,9 @@
         void Move();
         void LoadFuel();
     }
+
+    public interface Fuel
+    {
+        float tank { get; set; }
+    }
 }
