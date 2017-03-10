@@ -10,7 +10,7 @@ namespace Exercise2
     {
         static void Main(string[] args)
         {
-            Vehicle car = new Car(50.00, 15);
+            Vehicle car = new Truck(150.00, 13);
 
             bool loop = true;
 
