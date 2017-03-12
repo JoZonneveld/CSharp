@@ -8,6 +8,11 @@ namespace Exercise2
 {
     class Program
     {
+        public static void end()
+        {
+            Console.ReadKey();
+        }
+
         static void Main(string[] args)
         {
             Vehicle car = new Truck(150.00, 13);
@@ -26,7 +31,7 @@ namespace Exercise2
 
             car.LoadFuel();
 
-            Console.ReadKey();
+            end();
         }
     }
 }

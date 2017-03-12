@@ -35,10 +35,17 @@ namespace Exercise2
 
         public void LoadFuel()
         {
-            double x;
-            x = TankCapacity - Tank;
-            x = x * Fuel.Price;
-            Console.WriteLine("U moet " + x + " betalen");
+            if (Fuel.FuelKind == "Gasoline")
+            {
+                double x;
+                x = TankCapacity - Tank;
+                x = x * Fuel.Price;
+                Console.WriteLine("U moet " + x + " betalen");
+            }
+            else
+            {
+                Console.WriteLine("U heeft de verkeerde brandstof");
+            }
         }
     }
 }
