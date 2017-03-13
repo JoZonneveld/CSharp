@@ -16,8 +16,8 @@ namespace AssignmentComplete
 
     public Ore(int amount, Texture2D texture)
     {
-      this.texture = texture;
-      AddContent(amount);
+        this.texture = texture;
+        AddContent(amount);
     }
 
     public void Draw(SpriteBatch spriteBatch)
@@ -60,8 +60,12 @@ namespace AssignmentComplete
         Console.WriteLine("Too many...");
         return false;
       }
-      currentAmount += amount;
-      return true;
+            Console.WriteLine("c1 " + currentAmount);
+            Console.WriteLine("c2 " + CurrentAmount);
+            currentAmount += amount;
+            Console.WriteLine("c2 " + currentAmount);
+            Console.WriteLine("C2 " + CurrentAmount);
+            return true;
     }
   }
 }
