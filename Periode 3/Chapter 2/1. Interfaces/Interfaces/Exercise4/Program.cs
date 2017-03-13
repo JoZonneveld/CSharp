@@ -11,9 +11,7 @@ namespace Exercise4
     {
         static void Main(string[] args)
         {
-            Wait test = new Wait(10);
-            test.Update(10);
-            Console.WriteLine("test");
+            new Wait(10);
             Console.ReadKey();
         }
     }

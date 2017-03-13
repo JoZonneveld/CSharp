@@ -9,7 +9,7 @@ namespace Exercise4
 {
     interface IStateMachine
     {
-        void Update(float x);
+        void update(float x);
         bool done { get; set; }
     }
 }

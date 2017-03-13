@@ -3,30 +3,16 @@ using System.Threading;
 
 namespace Exercise4
 {
-
-    public class Timer
+    class Timer
     {
-        float initial_time;
-
-        public Timer(float time)
+        public Timer(float x)
         {
-            this.time = time;
-            initial_time = time;
-        }
-
-        float time;
-        bool busy = true;
-
-        public bool Busy
-        {
-            get { return busy; }
-
-            set { busy = value; }
+            
         }
     }
 
     public class Wait : IStateMachine
-        {
+    {
         public bool done { get; set; }
         public int Time;
 
@@ -34,14 +20,20 @@ namespace Exercise4
         {
             this.done = false;
             this.Time = time;
+            this.update(this.Time);
         }
-        public void Update(float x)
+
+        public void update(float x)
         {
-            new Timer(x);
-            this.Time -= 1;
-            if (this.Time == 0)
+            if (x == 0)
             {
                 this.done = true;
+            }
+            else
+            {
+                x -= 1;
+                this.update(x);
+                Console.WriteLine(x);
             }
         }
     }
