@@ -9,7 +9,7 @@ namespace AssignmentComplete
 {
   public interface ITruck : IComponent
   {
-    IContainer Container { get; }
+    IContainers Container { get; }
     Vector2 Position { get; }
     Vector2 Velocity { get; }
     void StartEngine();

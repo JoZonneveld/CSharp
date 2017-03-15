@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace AssignmentComplete
 {
@@ -22,10 +24,12 @@ namespace AssignmentComplete
                 if (mine.ProductsToShip.Count() == 3)
                 {
                     mine.productsToShip.Clear();
+                    
                 }
                 else if (mine.ProductsToShip.Count() == 2)
                 {
                     mine.isTruckReady = true;
+                    Console.WriteLine(mine.isTruckReady);
                 }
                 mine.ProductsToShip.Add(CreateOreBox(mine.Position + new Vector2(-80, 40 + -30 * mine.ProductsToShip.Count)));
       }
@@ -43,6 +47,7 @@ namespace AssignmentComplete
     Texture2D mine, oreContainer, oreBox, truckTexture;
     List<IStateMachine> processes;
     ITruck waitingTruck;
+    OreContainer FullOreContainer;
     public bool isTruckReady = false;
     Vector2 position;
     List<IContainer> productsToShip;
@@ -58,6 +63,8 @@ namespace AssignmentComplete
       this.oreBox = ore_box;
       this.position = position;
       waitingTruck = new Truck(truckTexture, null, position + new Vector2(100, 30), new Vector2(1, 0));
+      FullOreContainer = new OreContainer(new Vector2(90,25), oreContainer);
+      
 
 
             processes.Add(
@@ -71,7 +78,7 @@ namespace AssignmentComplete
         if (isTruckReady == true)
         {
             isTruckReady = false;
-            return new Truck(truckTexture, null, position + new Vector2(100,30), new Vector2(2,0));
+            return new Truck(truckTexture, FullOreContainer, position + new Vector2(100, 30), new Vector2(2, 0));
         }
       return null;
     }
@@ -104,7 +111,7 @@ namespace AssignmentComplete
         {
             waitingTruck.Draw(spriteBatch);
         }
-        
+       
       spriteBatch.Draw(mine, Position, Color.White);
     }
     public void Update(float dt)

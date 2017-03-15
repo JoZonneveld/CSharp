@@ -9,8 +9,8 @@ namespace AssignmentComplete
   /// </summary>
   public class Game1 : Game
   {
-    GraphicsDeviceManager graphics;
-    SpriteBatch spriteBatch;
+    public GraphicsDeviceManager graphics;
+    public SpriteBatch spriteBatch;
 
     IStateMachine sm;
     public Game1()
