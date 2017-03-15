@@ -11,7 +11,7 @@ namespace Exercise7
         static void Main(string[] args)
         {
             Counter counter = new Counter();
-
+            counter.
             while (true)
             {
                 if (counter.cnt > 50)

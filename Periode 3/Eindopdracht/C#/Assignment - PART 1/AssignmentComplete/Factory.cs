@@ -19,12 +19,23 @@ namespace AssignmentComplete
       }
       public void Run()
       {
-        mine.ProductsToShip.Add(CreateOreBox(mine.Position + new Vector2(-80, 40 + -30 * mine.ProductsToShip.Count)));
+                if (mine.ProductsToShip.Count() == 3)
+                {
+                    mine.productsToShip.Clear();
+                }
+                else if (mine.ProductsToShip.Count() == 2)
+                {
+                    mine.isTruckReady = true;
+                }
+                mine.ProductsToShip.Add(CreateOreBox(mine.Position + new Vector2(-80, 40 + -30 * mine.ProductsToShip.Count)));
       }
       Ore CreateOreBox(Vector2 position)
       {
-        var box = new Ore(100, mine.oreBox);
-        box.Position = position;
+          int Amount_Mines = 100* mine.ProductsToShip.Count();
+          var box = new Ore(Amount_Mines, mine.oreBox);
+          box.Position = position;
+
+          
         return box;
       }
     }
@@ -32,12 +43,13 @@ namespace AssignmentComplete
     Texture2D mine, oreContainer, oreBox, truckTexture;
     List<IStateMachine> processes;
     ITruck waitingTruck;
-    bool isTruckReady = false;
+    public bool isTruckReady = false;
     Vector2 position;
     List<IContainer> productsToShip;
 
     public Mine(Vector2 position, Texture2D truck_texture, Texture2D mine, Texture2D ore_box, Texture2D ore_container)
     {
+
       processes = new List<IStateMachine>();
       ProductsToShip = new List<IContainer>();
       this.mine = mine;
@@ -45,9 +57,10 @@ namespace AssignmentComplete
       this.oreContainer = ore_container;
       this.oreBox = ore_box;
       this.position = position;
+      waitingTruck = new Truck(truckTexture, null, position + new Vector2(100, 30), new Vector2(1, 0));
 
 
-      processes.Add(
+            processes.Add(
         new Repeat(new Seq(new Timer(1.0f),
                            new Call(new AddOreBoxToMine(this)))));
     }
@@ -55,7 +68,11 @@ namespace AssignmentComplete
 
     public ITruck GetReadyTruck()
     {
-      //not implemented yet
+        if (isTruckReady == true)
+        {
+            isTruckReady = false;
+            return new Truck(truckTexture, null, position + new Vector2(100,30), new Vector2(2,0));
+        }
       return null;
     }
 
@@ -83,6 +100,11 @@ namespace AssignmentComplete
       {
         cart.Draw(spriteBatch);
       }
+        if (productsToShip.Count() != 3)
+        {
+            waitingTruck.Draw(spriteBatch);
+        }
+        
       spriteBatch.Draw(mine, Position, Color.White);
     }
     public void Update(float dt)

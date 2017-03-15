@@ -14,7 +14,7 @@ namespace Exercise7
         {
             cnt = cnt + 1;
         }
-
+       
         public void Reset()
         {
             cnt = 1;

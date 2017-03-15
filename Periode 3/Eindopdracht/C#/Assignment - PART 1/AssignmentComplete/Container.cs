@@ -12,7 +12,7 @@ namespace AssignmentComplete
   {
     Texture2D texture;
     Vector2 position = Vector2.One * -100;
-    int currentAmount;
+    int currentAmount = 100;
 
     public Ore(int amount, Texture2D texture)
     {
@@ -49,23 +49,20 @@ namespace AssignmentComplete
     {
       get
       {
-        return 1000;
+        return 300;
       }
     }
 
     public bool AddContent(int amount)
     {
-      if (CurrentAmount + amount > MaxCapacity)
-      {
-        Console.WriteLine("Too many...");
-        return false;
-      }
-            Console.WriteLine("c1 " + currentAmount);
-            Console.WriteLine("c2 " + CurrentAmount);
-            currentAmount += amount;
-            Console.WriteLine("c2 " + currentAmount);
-            Console.WriteLine("C2 " + CurrentAmount);
-            return true;
+        if (CurrentAmount + amount >= MaxCapacity)
+        {
+            Console.WriteLine("Too many...");
+            return false;
+        }
+        
+                return true;
+        
     }
   }
 }

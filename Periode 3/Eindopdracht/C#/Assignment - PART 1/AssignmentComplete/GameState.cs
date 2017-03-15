@@ -25,11 +25,12 @@ namespace AssignmentComplete
       trucks = new List<ITruck>();
 
       //this.processes = new List<IStateMachine>();
-      //this.processes.Add(new Repeat(new Call(new AddTruckFromFactory(factory1, trucks))));
+      this.processes.Add(new Repeat(new Call(new AddTruckFromFactory(factory1, trucks))));
       //this.processes.Add(new Repeat(new Call(new AddTruckFromFactory(factory2, trucks))));
 
 
     }
+
     public void Update(float dt)
     {
       trucks.RemoveAll(truck => truck.Position.X < -50 || truck.Position.X > 1000);
@@ -41,8 +42,10 @@ namespace AssignmentComplete
       {
         truck.Update(dt);
       }
-      if(factory1 != null)
-        factory1.Update(dt);
+        if (factory1 != null)
+        {
+                factory1.Update(dt);
+        }
       if(factory2 != null)
         factory2.Update(dt);
     }
