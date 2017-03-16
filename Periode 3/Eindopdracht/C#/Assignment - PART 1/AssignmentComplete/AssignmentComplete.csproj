@@ -49,7 +49,6 @@
     <Compile Include="Game1.cs" />
     <Compile Include="GameState.cs" />
     <Compile Include="IComponent.cs" />
-    <Compile Include="IContainers.cs" />
     <Compile Include="IFactory.cs" />
     <Compile Include="IContainer.cs" />
     <Compile Include="ITruck.cs" />

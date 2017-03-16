@@ -28,7 +28,7 @@ namespace AssignmentComplete
                 }
                 else if (mine.ProductsToShip.Count() == 2)
                 {
-                    //mine.isTruckReady = true;
+                    mine.isTruckReady = true;
                 }
                 mine.ProductsToShip.Add(CreateOreBox(mine.Position + new Vector2(-80, 40 + -30 * mine.ProductsToShip.Count)));
       }
@@ -47,7 +47,7 @@ namespace AssignmentComplete
     List<IStateMachine> processes;
     ITruck waitingTruck;
     OreContainer FullOreContainer;
-    public bool isTruckReady = false;
+    bool isTruckReady = false;
     Vector2 position;
     List<IContainer> productsToShip;
 
@@ -62,7 +62,7 @@ namespace AssignmentComplete
       this.oreBox = ore_box;
       this.position = position;
       waitingTruck = new Truck(truckTexture, null, position + new Vector2(100, 30), new Vector2(1, 0));
-      FullOreContainer = new OreContainer(new Vector2(90,25), oreContainer);
+      //FullOreContainer = new OreContainer(position + new Vector2(85,15), oreContainer);
       
 
 
@@ -77,7 +77,7 @@ namespace AssignmentComplete
         if (isTruckReady)
         {
             isTruckReady = false;
-            return new Truck(truckTexture, FullOreContainer, position + new Vector2(100, 30), new Vector2(2, 0));
+            return new Truck(truckTexture, null, position + new Vector2(100, 30), new Vector2(2, 0));
         }
       return null;
     }
@@ -110,17 +110,8 @@ namespace AssignmentComplete
         {
             waitingTruck.Draw(spriteBatch);  
         }
-
-        if (productsToShip.Count() == 3 && test == false)
-        {
-            isTruckReady = true;
-            test = true;
-        }
-        else if (productsToShip.Count() == 1 && test == true)
-        {
-            test = false;
-        }
-
+        //FullOreContainer.Draw(spriteBatch);
+        
         spriteBatch.Draw(mine, Position, Color.White);
     }
     public void Update(float dt)
