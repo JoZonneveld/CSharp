@@ -13,6 +13,6 @@ namespace AssignmentComplete
     Vector2 Position { get; }
     Vector2 Velocity { get; }
     void StartEngine();
-    void AddContainer(IContainer container);
+    void AddContainer(IContainers container);
   }
 }

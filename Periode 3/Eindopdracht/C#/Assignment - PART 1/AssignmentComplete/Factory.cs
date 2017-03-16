@@ -11,7 +11,7 @@ namespace AssignmentComplete
 {
   class Mine : IFactory
   {
-
+    bool test = false;
     class AddOreBoxToMine : IAction
     {
       Mine mine;
@@ -28,8 +28,7 @@ namespace AssignmentComplete
                 }
                 else if (mine.ProductsToShip.Count() == 2)
                 {
-                    mine.isTruckReady = true;
-                    Console.WriteLine(mine.isTruckReady);
+                    //mine.isTruckReady = true;
                 }
                 mine.ProductsToShip.Add(CreateOreBox(mine.Position + new Vector2(-80, 40 + -30 * mine.ProductsToShip.Count)));
       }
@@ -75,7 +74,7 @@ namespace AssignmentComplete
 
     public ITruck GetReadyTruck()
     {
-        if (isTruckReady == true)
+        if (isTruckReady)
         {
             isTruckReady = false;
             return new Truck(truckTexture, FullOreContainer, position + new Vector2(100, 30), new Vector2(2, 0));
@@ -109,10 +108,20 @@ namespace AssignmentComplete
       }
         if (productsToShip.Count() != 3)
         {
-            waitingTruck.Draw(spriteBatch);
+            waitingTruck.Draw(spriteBatch);  
         }
-       
-      spriteBatch.Draw(mine, Position, Color.White);
+
+        if (productsToShip.Count() == 3 && test == false)
+        {
+            isTruckReady = true;
+            test = true;
+        }
+        else if (productsToShip.Count() == 1 && test == true)
+        {
+            test = false;
+        }
+
+        spriteBatch.Draw(mine, Position, Color.White);
     }
     public void Update(float dt)
     {

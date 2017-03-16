@@ -21,6 +21,7 @@ namespace AssignmentComplete
             IContainers Container = container;
             this.position = position;
             this.Velocity = velocity;
+            AddContainer(Container);
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -38,9 +39,9 @@ namespace AssignmentComplete
             //throw new NotImplementedException();
         }
 
-        public void AddContainer(IContainer container)
+        public void AddContainer(IContainers container)
         {
-            //throw new NotImplementedException();
+            
         }
     }
 
