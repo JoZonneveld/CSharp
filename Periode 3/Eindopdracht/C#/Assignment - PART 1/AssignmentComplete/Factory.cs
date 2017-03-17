@@ -11,7 +11,6 @@ namespace AssignmentComplete
 {
   class Mine : IFactory
   {
-    bool test = false;
     class AddOreBoxToMine : IAction
     {
       Mine mine;
