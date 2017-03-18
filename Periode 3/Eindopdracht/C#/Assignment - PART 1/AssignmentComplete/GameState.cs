@@ -16,17 +16,17 @@ namespace AssignmentComplete
     Texture2D background;
 
     
-    public GameState(Texture2D background, Texture2D mine_cart, Texture2D product_box, Texture2D volvo, Texture2D mine, Texture2D ikea, Texture2D ore_container, Texture2D product_container)
+    public GameState(Texture2D background, Texture2D mine_cart, Texture2D product_box, Texture2D volvo, Texture2D volvo2, Texture2D mine, Texture2D ikea, Texture2D ore_container, Texture2D product_container)
     {
       this.background = background;
       factory1 = new Mine(new Vector2(100, 70), volvo, mine, mine_cart, ore_container);
-      factory2 = null;//new Ikea(new Vector2(600, 340), volvo, ikea, product_box, product_container);
+      factory2 = new Ikea(new Vector2(600, 340), volvo2, ikea, product_box, product_container);
       processes = new List<IStateMachine>();
       trucks = new List<ITruck>();
-
+      
       //this.processes = new List<IStateMachine>();
       this.processes.Add(new Repeat(new Call(new AddTruckFromFactory(factory1, trucks))));
-      //this.processes.Add(new Repeat(new Call(new AddTruckFromFactory(factory2, trucks))));
+      this.processes.Add(new Repeat(new Call(new AddTruckFromFactory(factory2, trucks))));
 
 
     }
@@ -80,9 +80,16 @@ namespace AssignmentComplete
       var maybe_truck = factory.GetReadyTruck();
       if (maybe_truck != null)
       {
+        //if()
         maybe_truck.StartEngine();
         trucks.Add(maybe_truck);
       }
-    }
+      var maybe_Container = factory.getReadyContainer();
+      if (maybe_Container != null)
+      {
+          maybe_Container.StartEngine();
+          trucks.Add(maybe_Container);
+      }
+        }
   }
 }

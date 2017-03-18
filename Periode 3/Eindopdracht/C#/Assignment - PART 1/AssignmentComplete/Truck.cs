@@ -13,14 +13,15 @@ namespace AssignmentComplete
         public IContainer Container { get; }
         public Vector2 position;
         public Vector2 Position { get { return position; } }
-        public Vector2 Velocity { get; }
+        public Vector2 velocity;
+        public Vector2 Velocity { get { return velocity; } }
 
         public Truck(Texture2D texture, IContainer container, Vector2 position, Vector2 velocity)
         {
             this.texture = texture;
             IContainer Container = container;
             this.position = position;
-            this.Velocity = velocity;
+            this.velocity = velocity;
             //AddContainer(Container);
         }
 
@@ -36,7 +37,7 @@ namespace AssignmentComplete
 
         public void StartEngine()
         {
-            //throw new NotImplementedException();
+            //this.velocity = this.velocity;
         }
 
         public void AddContainer(IContainer container)
@@ -45,21 +46,43 @@ namespace AssignmentComplete
         }
     }
 
-    class OreContainer : IContainer
+    class OreContainer : ITruck
     {
+        Texture2D texture;
+        public IContainer Container { get; }
+        public Vector2 position;
+        public Vector2 Position { get { return position; } }
+        public Vector2 velocity;
+        public Vector2 Velocity { get { return velocity; } }
+
+        public OreContainer(Texture2D texture, IContainer container, Vector2 position, Vector2 velocity)
+        {
+            this.texture = texture;
+            IContainer Container = container;
+            this.position = position;
+            this.velocity = velocity;
+            //AddContainer(Container);
+        }
+
         public void Draw(SpriteBatch spriteBatch)
         {
-            throw new NotImplementedException();
+            spriteBatch.Draw(texture, Position, Color.White);
         }
 
-        public int CurrentAmount { get; }
-        public int MaxCapacity { get; }
-        public bool AddContent(int amount)
+        public void Update(float dt)
         {
-            throw new NotImplementedException();
+            position += Velocity;
         }
 
-        public Vector2 Position { get; set; }
+        public void StartEngine()
+        {
+            //this.velocity = new Vector2(x, 0);
+        }
+
+        public void AddContainer(IContainer container)
+        {
+
+        }
     }
   
 }

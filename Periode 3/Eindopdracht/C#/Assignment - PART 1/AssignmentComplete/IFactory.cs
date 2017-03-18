@@ -13,7 +13,9 @@ namespace AssignmentComplete
     Vector2 Position { get; }
     List<IContainer> ProductsToShip { get; }
     ITruck GetReadyTruck();
+    ITruck getReadyContainer();
 
-    
+
+
   }
 }

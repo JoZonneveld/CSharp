@@ -60,22 +60,28 @@ namespace AssignmentComplete
       this.oreContainer = ore_container;
       this.oreBox = ore_box;
       this.position = position;
-      waitingTruck = new Truck(truckTexture, null, position + new Vector2(100, 30), new Vector2(1, 0));
-      //FullOreContainer = new OreContainer(position + new Vector2(85,15), oreContainer);
+      waitingTruck = new Truck(truckTexture, null, position + new Vector2(100, 30), new Vector2(0, 0));
       
-
-
             processes.Add(
         new Repeat(new Seq(new Timer(1.0f),
                            new Call(new AddOreBoxToMine(this)))));
     }
 
+      public ITruck getReadyContainer()
+      {
+          if (isTruckReady)
+          {
+                isTruckReady = false;
+                return new OreContainer(oreContainer, null, position + new Vector2(85, 18), new Vector2(2, 0));
+            }
+          return null;
+      }
 
     public ITruck GetReadyTruck()
     {
         if (isTruckReady)
         {
-            isTruckReady = false;
+            
             return new Truck(truckTexture, null, position + new Vector2(100, 30), new Vector2(2, 0));
         }
       return null;

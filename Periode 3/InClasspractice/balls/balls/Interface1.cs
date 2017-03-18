@@ -17,42 +17,6 @@ namespace balls
         Vector2 Velocity { get;  }
     }
 
-    public class AgentBall : Ball
-    {
-        private Vector2 position;
-        private Vector2 velocity;
-        private Texture2D texture;
-
-        public AgentBall(Texture2D texture, Ball players_ball)
-        {
-            this.texture = texture;
-            position = new Vector2(0, 0);
-            velocity = new Vector2(0, 0);
-
-            new Repeat(new Seq(new Timer(3), new Action((() =>
-            {
-                velocity =
-                {
-                    players_ball.Position - position;
-                    velocity.Normalize();
-                }
-            }))));
-        }
-
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(float dt)
-        {
-            
-        }
-
-        public Vector2 Position { get { return position; } }
-        public Vector2 Velocity { get { return velocity; } }
-    }
-
     public class ControlBall : Ball
     {
         private Vector2 position;

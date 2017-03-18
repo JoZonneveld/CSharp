@@ -29,15 +29,16 @@ namespace AssignmentComplete
     protected override void LoadContent()
     {
       spriteBatch = new SpriteBatch(graphics.GraphicsDevice);
-      Texture2D volvo = Content.Load<Texture2D>("volvo");
-      Texture2D mine = Content.Load<Texture2D>("mine");
+            Texture2D volvo = Content.Load<Texture2D>("volvo");
+            Texture2D volvo2 = Content.Load<Texture2D>("volvo2");
+            Texture2D mine = Content.Load<Texture2D>("mine");
       Texture2D ore_container = Content.Load<Texture2D>("ore_container");
       Texture2D product_container = Content.Load<Texture2D>("product_container");
       Texture2D ikea = Content.Load<Texture2D>("ikea");
       Texture2D background = Content.Load<Texture2D>("background");
       Texture2D mine_cart = Content.Load<Texture2D>("mine_cart");
       Texture2D product_box = Content.Load<Texture2D>("product_box");
-      gameState = new GameState(background, mine_cart, product_box, volvo, mine, ikea, ore_container, product_container);
+      gameState = new GameState(background, mine_cart, product_box, volvo, volvo2, mine, ikea, ore_container, product_container);
     }
 
     protected override void Update(GameTime gameTime)
