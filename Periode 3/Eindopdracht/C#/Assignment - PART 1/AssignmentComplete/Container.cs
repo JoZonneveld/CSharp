@@ -57,7 +57,6 @@ namespace AssignmentComplete
     {
         if (CurrentAmount + amount >= MaxCapacity)
         {
-            Console.WriteLine("Too many...");
             return false;
         }
         

@@ -68,7 +68,7 @@ namespace AssignmentComplete
             if (isTruckReady)
             {
                 isTruckReady = false;
-                return new OreContainer(oreContainer, null, position + new Vector2(-115, 8), new Vector2(-2, 0));
+                return new OreContainer(oreContainer, null, position + new Vector2(-65, 8), new Vector2(-2, 0));
             }
             return null;
         }
