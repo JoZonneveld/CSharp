@@ -45,7 +45,7 @@ namespace AssignmentComplete
     Texture2D mine, oreContainer, oreBox, truckTexture;
     List<IStateMachine> processes;
     ITruck waitingTruck;
-    OreContainer FullOreContainer;
+    //OreContainer FullOreContainer;
     bool isTruckReady = false;
     Vector2 position;
     List<IContainer> productsToShip;
