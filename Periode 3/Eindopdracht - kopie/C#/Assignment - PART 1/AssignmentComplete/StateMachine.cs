@@ -178,6 +178,7 @@ namespace AssignmentComplete
 
     public void Reset()
     {
+      s1.Reset();
       s2.Reset();
       current = s1;
       Busy = true;

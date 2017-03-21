@@ -12,7 +12,7 @@ namespace AssignmentComplete
     public GraphicsDeviceManager graphics;
     public SpriteBatch spriteBatch;
 
-    //IStateMachine sm;
+    IStateMachine sm;
     public Game1()
     {
       graphics = new GraphicsDeviceManager(this);
